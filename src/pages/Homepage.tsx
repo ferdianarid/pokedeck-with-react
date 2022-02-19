@@ -1,7 +1,7 @@
 import React, { useState, useEffect, SetStateAction } from 'react'
 import PokeCard from '../components/PokeCard'
 
-export const Homepage = () => {
+const Homepage = () => {
        // const pokemonapi = "https://pokeapi.co/api/v2/pokemon"
 
        const [pokemon, setPokemon]: SetStateAction<any> = useState([])
@@ -50,3 +50,5 @@ export const Homepage = () => {
               </React.Fragment>
        )
 }
+
+export default Homepage
