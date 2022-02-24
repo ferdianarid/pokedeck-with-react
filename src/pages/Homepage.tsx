@@ -1,12 +1,11 @@
 import React, { useState, useEffect, SetStateAction } from 'react'
 import Navbar from '../components/Navbar'
 import PokeCard from '../components/PokeCard'
+import { API_URL } from "../apis/apis"
 
 const Homepage = () => {
-       const pokemonapi = "https://pokeapi.co/api/v2/pokemon"
-
        const [pokemon, setPokemon]: SetStateAction<any> = useState([])
-       const [loadMore, setLoadMore] = useState(`${pokemonapi}?limit=20`)
+       const [loadMore, setLoadMore] = useState(`${API_URL}?limit=20`)
 
        const fetchPokemon = async () => {
               const response = await fetch(loadMore)
@@ -16,7 +15,7 @@ const Homepage = () => {
 
               const createPokemon = (results: any) => {
                      results.forEach(async (pokemon: any) => {
-                            const responses = await fetch(`${pokemonapi}/${pokemon.name}`)
+                            const responses = await fetch(`${API_URL}/${pokemon.name}`)
                             const dataPokemonName = await responses.json()
                             // console.log(dataPokemonName)
 

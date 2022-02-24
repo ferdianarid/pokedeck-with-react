@@ -7,6 +7,12 @@
 
 .env
 
+# api url
+src/apis
+src/apis/apis
+
+.gitignore
+
 # testing
 /coverage
 
